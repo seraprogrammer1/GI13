@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>
+        Movie Search
+    </h1>
+    <main>
+        <div>
+            <label name="searchBar" class="hide"></label>
+            <div id="searchBarHolder">
+                <input id="searchBar" type="text">
+            </div>
+        </div>
+        <div id="buttonHolder">
+            <button class="movie-type" onclick="movieButton('popular')">Popular</button>
+            <button class="movie-type" onclick="movieButton('top_rated')">Top Rated</button>
+            <button class="movie-type" onclick="movieButton('upcoming')">Upcoming</button>
+            <button class="movie-type" onclick="movieButton('now_playing')">Now Playing</button>
+        </div>
+        <div id="movieHolder">
+            <div id="movieCard">
+                <div id="moviePoster"></div>
+                <div id="movieInfo">
+                    <h2 id="movieTitle"></h2>
+                    <p id="movieRelease"></p>
+                    <p id="movieRating"></p>
+                    <p id="movieOverview"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="app.js"></script>
+</body>
+</html>

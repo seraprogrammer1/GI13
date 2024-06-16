@@ -13,16 +13,6 @@ Welcome to Movie Search, an intuitive web application for browsing and discoveri
 
 1. **Start the Application**: Open your preferred web browser and load the application.
 2. **Search for a Movie**: Use the search bar at the top to type in the name of the movie you are looking for.
-3. **Browse Movies**: Click on one of the category buttons to filter movies by type.
-4. **Explore Movie Details**: Move your cursor over a movie image. A card will slide up, displaying the movie’s title, release date, rating, vote count, and a brief overview.
-5. **Find Similar Movies**: Click the 'Find Similar' button on any movie card to search for related titles.
-
-## Technical Details
-
-- **Hover Effect**: Implemented using CSS for a seamless transition that reveals each movie's details upon hovering.
-- **Responsive Design**: Ensures a smooth browsing experience on both desktops and mobile devices.
-
-## CSS Highlights
-
-- **Animation**: The hover effect is driven by CSS animations that transition the movie details into view.
-- **Grid Layout**: Movies are presented in a grid layout, allowing for a clean and organized appearance.
+3. **Browse Movies**: Click on one of the category buttons to see Popular, Top Rated, Upcoming, or Now Playing movies.
+4. **Explore Movie Details**: Move your cursor over a movie image. A card will slide down, displaying the movie’s title, release date, rating, vote count, and a brief overview.
+5. **Find Similar Movies**: Just hover over a movie card and click the 'Find Similar' button to search for related titles.

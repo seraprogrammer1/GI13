@@ -14,115 +14,175 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: rgb(196, 196, 196);
+    background-color: rgb(214, 214, 214);
 }
 
 h1 {
     text-align: center;
     padding: 20px;
     margin-bottom: 2px;
-    background-color: rgb(111, 111, 111, .5);
+    background-color: rgb(111, 111, 111, .2);
 }
 
 main {
-    max-width: 2200px;
-    background-color: rgb(200, 200, 200, .5);
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
 
+main > div {
+    max-width: 2200px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
+
 #searchBarHolder {
-    padding: 1px;
-    width: 402px;
-    border-radius: 20px;
     display: flex;
-    margin: 20px auto;
+    justify-content: center;
+    margin: 10px;
     background-color: rgb(214, 214, 214);
-    input {
-        width: 400px;
-        margin: 0 auto;
-        border: 1px solid rgb(99, 99, 99);
-        border-radius: 20px;
-        padding: 2px;
-    }
-    input:focus {
-        outline: none;
-    }
+}
+
+#searchBarHolder input {
+    max-width: 400px;
+    flex-grow: 1;
+    
+    border: 1px solid rgb(99, 99, 99);
+    border-radius: 5px;
+    
+    margin: 10px;
+    padding: 8px 10px;
+}
+
+#searchBarHolder input:focus {
+    outline: none;
 }
 
 #buttonHolder {
     display: flex;
     justify-content: center;
     margin: 10px;
-    button {
-        padding: 10px;
-        margin: 10px;
-        border-radius: 10px;
-        background-color: rgb(214, 214, 214);
-        border: 1px solid rgb(99, 99, 99);
-    }
-    button:hover {
-        background-color: rgb(99, 99, 99);
-        color: white;
-    }
+}
+
+#buttonHolder button {
+    padding: 8px 10px;
+    margin: 10px;
+    border-radius: 4px;
+    background-color: rgb(214, 214, 214);
+    border: 1px solid rgb(99, 99, 99);
+}
+
+#buttonHolder button:hover {
+    background-color: rgb(99, 99, 99);
+    color: white;
 }
 
 #movieHolder {
     flex-grow: 1;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px;
+    padding: 10px;
+}
 
-    flex-grow: 1;
-    padding: 20px;
+.movie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
-    background-color: blue;
+.movieImg {
+    width: 200px;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    border: 4px solid rgb(0, 0, 0);
+    border-radius: 10px;
+}
 
-    .movie {
-        margin: 10px;
-        
-        background-color: white;
-        max-height: 600px;
+.movie div {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    overflow: hidden;
+}
 
-        border: 4px solid black;
-        border-radius: 10px;
+.movie div div {
+    width: 200px;
+    height: 300px;
+    transform: translate(0, -101%);
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        padding: 10px;
+    color: white;
+    background-color: rgba(69, 69, 69, 0.8);
+}
 
-        .movieImg {
-            max-width: 100%;
-            max-height: 100%;
-            flex-grow: 1;
-        }
-        #movieInfo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-evenly;
-            padding: 10px;
-            width: 100%;
-            min-height: 280px;
-            max-height: 280px;
-            border-top: 2px solid rgb(214, 214, 214, .8);
-            margin-top: 4px;
-            h2 {
-                margin: 10px;
-            }
-            p {
-                margin: 1px;
-            }
-            .movieOverview {
-                min-height: 100px;
-                max-height: 100px;
-                overflow: auto;
-            }
-            overflow: hidden;
-        }
+.movieTitle {
+    font-weight: bold;
+    text-align: center;
+    font-size: larger;
+    color: white;
+    text-shadow: 1.5px 1.5px 1.5px #000;
+}
+
+.movieRelease {
+    font-size: medium;
+    text-align: center;
+}
+
+.movieRating {
+    font-size: medium;
+    text-align: center;
+}
+
+.movieVoteCount {
+    font-size: medium;
+    text-align: center;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.movie button {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: rgb(214, 214, 214);
+    border: 1px solid rgb(99, 99, 99);
+}
+
+.movie button:hover {
+    background-color: rgb(99, 99, 99);
+    color: white;
+}
+
+.movie button:active {
+    background-color: rgb(99, 99, 99);
+    color: white;
+}
+
+.movieOverview {
+    font-size: medium;
+    overflow: auto;
+}
+
+.movie div:hover > div {
+    animation: move .4s forwards 0s ease-in-out 1 normal;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, -101);
+    }
+    100% {
+        transform: translate(0, 0);
     }
 }
 
@@ -130,4 +190,48 @@ footer {
     min-height: 40px;
     border-top: 2px solid rgb(214, 214, 214, .8);
     background-color: rgba(214, 214, 214);
+}
+
+@media screen and (max-width: 1200px) {
+    #movieHolder {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #movieHolder {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #movieHolder {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #searchBarHolder input {
+        width: 302px;
+    }
+    #buttonHolder {
+        flex-direction: column;
+    }
+    #buttonHolder button {
+        padding: 4px;
+    }
+    h1 {
+        font-size: x-large;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #searchBarHolder input {
+        width: 202px;
+    }
+    #buttonHolder button {
+        padding: 2px;
+    }
+    h1 {
+        font-size: large;
+        padding: 5px;
+    }
 }
